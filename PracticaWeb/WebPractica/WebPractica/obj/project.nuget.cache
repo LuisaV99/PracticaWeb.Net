@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IWbU3Cv4WXvzjDNeV+3eCA2tMcOpUEsvLkA/tqa93ruVb21Eh4cuxWlleRMqT1VycZlFQ0eojOLMAmX4pFSFOw==",
+  "dgSpecHash": "52eV+uGC3gcSt41MRfmdHmj3eGJe4yWsJx+tNVyEKB2reSG/K35d3b1IM4DoRy+0fJYSsaeaL9vYmOlaJUuOhA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL I5\\Desktop\\PracticaWeb-LuisaValencia28-07\\PracticaWeb\\PracticaWeb\\WebPractica\\WebPractica\\WebPractica.csproj",
+  "projectFilePath": "C:\\Users\\DELL I5\\Source\\Repos\\PracticaWeb.Net\\PracticaWeb\\WebPractica\\WebPractica\\WebPractica.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL I5\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\castle.windsor\\5.1.2\\castle.windsor.5.1.2.nupkg.sha512",
@@ -11,6 +11,7 @@
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.17\\microsoft.aspnetcore.cryptography.keyderivation.5.0.17.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.17\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.17.nupkg.sha512",
+    "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\5.0.17\\microsoft.aspnetcore.identity.ui.5.0.17.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.aspnetcore.razor.runtime\\2.2.0\\microsoft.aspnetcore.razor.runtime.2.2.0.nupkg.sha512",
@@ -39,6 +40,8 @@
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.2\\microsoft.extensions.dependencyinjection.5.0.2.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.extensions.dependencymodel\\1.1.2\\microsoft.extensions.dependencymodel.1.1.2.nupkg.sha512",
+    "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\5.0.0\\microsoft.extensions.fileproviders.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\5.0.17\\microsoft.extensions.fileproviders.embedded.5.0.17.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.extensions.identity.core\\5.0.17\\microsoft.extensions.identity.core.5.0.17.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.extensions.identity.stores\\5.0.17\\microsoft.extensions.identity.stores.5.0.17.nupkg.sha512",
     "C:\\Users\\DELL I5\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
