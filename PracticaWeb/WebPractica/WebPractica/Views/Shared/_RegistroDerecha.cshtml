@@ -1,0 +1,34 @@
+﻿@*Importamos la siguiente libreria*@
+@using Microsoft.AspNetCore.Identity
+
+@*InYectamos el sigiente codigo*@
+@inject SignInManager<IdentityUser> SingInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav ml-auto">
+    @*Verifica si el usuario está autenticado*@
+    @if (SingInManager.IsSignedIn(User))
+    {
+        //Muestra en la barra la bienvenida al usuario
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="">Hola, @UserManager.GetUserName(User)</a>
+        </li>
+        //Muestra el boton salir
+        <li class="nav-item">
+            <form id="LogoutForm" method="post" class="form-inline" asp-controller="Cuentas" asp-action="SalirAplicacion">
+                <button type="submit" class="btn nav-link">Salir</button>
+            </form>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Cuentas" asp-action="Registro">Registrarse</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Cuentas" asp-action="Acceso">Acceder</a>
+        </li>
+    }
+
+</ul>   

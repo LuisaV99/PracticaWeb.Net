@@ -1,0 +1,125 @@
+﻿@model IEnumerable<WebPractica.Models.Registro>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="wrapper">
+    <div class="content-wrapper">
+        <p>
+            <a asp-action="Create"><h1 style="color:blue">Nuevo registro</h1></a>
+        </p>
+        <table class="table" id="tblData">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Imagen)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Documento)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Apellidos)
+                    </th> @*<th>
+                        @Html.DisplayNameFor(model => model.FechaNac) </th>*@ @*<th>
+                        @Html.DisplayNameFor(model => model.Direccion) </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Celular)
+                        </th> @*<th>
+                            @Html.DisplayNameFor(model => model.Genero) </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.Deporte)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Trabaja)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Sueldo)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Estado)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @*@Html.DisplayFor(modelItem => item.Imagen)*@ @if (item.Imagen != null)
+                                {
+                                    var base64 = Convert.ToBase64String(item.Imagen);
+                                    var imgScr = String.Format("data:image/jpg;base64,{0}", base64);<img src='@imgScr' style="max-width:50px; max-height:50px;" class="img-circle elevation-2" />
+                                }
+                            </td>
+                            <td style="width: auto;">
+                                @Html.DisplayFor(modelItem => item.Documento)
+                            </td>
+                            <td style="width: auto;">
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </td>
+                            <td style="width: auto;">
+                                @Html.DisplayFor(modelItem => item.Apellidos)
+                            </td> @*<td>
+                                @Html.DisplayFor(modelItem => item.FechaNac) </td>*@ @*<td>
+                                @Html.DisplayFor(modelItem => item.Direccion) </td>*@
+                                <td style="width: auto;">
+                                    @Html.DisplayFor(modelItem => item.Celular)
+                                </td> @*<td>
+                                    @Html.DisplayFor(modelItem => item.Genero) </td>*@
+                                <td style="width: auto;">
+                                    @Html.DisplayFor(modelItem => item.Deporte)
+                                </td>
+                                <td style="width: auto;">
+                                    @Html.DisplayFor(modelItem => item.Trabaja)
+                                </td>
+                                <td style="width: 100px;">
+                                    @Html.DisplayFor(modelItem => item.Sueldo)
+                                </td>
+                                <td style="width: auto;">
+                                    @Html.DisplayFor(modelItem => item.Estado)
+                                </td>
+                                <td style="color:whitesmoke;width: 270px;">
+                                    <a class="btn btn-success btn-sm" asp-action="Edit" asp-route-id="@item.IdRegistro"><i class="fas fa-pencil-alt"></i>Editar</a>
+                                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.IdRegistro"><i class="fas fa-folder"></i>Detalle</a>
+                                    <a class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delete-conformation" onclick="recibir(@item.IdRegistro)"><i class="fas fa-trash"></i>Eliminar</a>
+                                </td>
+                            </tr>
+                        }
+                </tbody>
+            </table>
+            <div class="modal fade" id="delete-conformation" tabindex="-1" role="dialog" aria-labelledby="confirmdelete" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" style="background-color:black">
+                        <div class="modal-header" style="color:whitesmoke">
+                            <h5 class="modal-title" id="confirmdelete" style="color:whitesmoke">Eliminar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:whitesmoke">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="color:whitesmoke">
+                            <p>¿Está seguro de eliminar este registro?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button> @using (Html.BeginForm("Delete", "Registros"))
+                            {
+                                <input type="hidden" id="codigo" name="id" />
+                                <input type="submit" value="Delete" data-toggle="modal" data-target="#delete-conformation" class="btn btn-danger" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script language="javascript">
+                function recibir(id) {
+                    var valor = id
+                    document.getElementById("codigo").value = valor;
+                }
+            </script>
+            @section Scripts{
+                <script src="/js/Tablas.js"></script> }
+        </div>
+</div>

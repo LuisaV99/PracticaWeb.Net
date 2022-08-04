@@ -1,0 +1,147 @@
+﻿@model WebPractica.Models.Registro
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="wrapper">
+    <div class="content-wrapper">
+        <h1 style="color: blue">Nuevo Registro</h1>
+        <hr />
+        <div class="container">
+            <form asp-action="Create" enctype="multipart/form-data" asp-controller="Registros">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <label asp-for="Imagen" class="control-label"></label>
+                        </div>
+                        <div class="col-md-4">
+                            <img id="mostrarfoto" class="img-rounded" src="" width="150" height="150" />
+                            <label for="file"></label>
+                            <input type="file" style="color: transparent" asp-for="Imagen" name="ImageFile" id="btn_enviar" accept="image/*" onchange="loadFile(event)">
+                            <script>
+                                var loadFile = function (event) {
+                                    var output = document.getElementById('mostrarfoto');
+                                    output.src = URL.createObjectURL(event.target.files[0]);
+                                };
+                            </script>
+                            <span asp-validation-for="Imagen" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Documento" class="control-label"></label>
+                            <input type="number" asp-for="Documento" class="form-control" />
+                            <span asp-validation-for="Documento" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Nombre" class="control-label"></label>
+                            <input asp-for="Nombre" class="form-control" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="Apellidos" class="control-label"></label>
+                            <input asp-for="Apellidos" class="form-control" />
+                            <span asp-validation-for="Apellidos" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label asp-for="FechaNac" class="control-label"></label>
+                            <input type="date" asp-for="FechaNac" class="form-control" />
+                            <span asp-validation-for="FechaNac" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label asp-for="Direccion" class="control-label"></label>
+                            <input asp-for="Direccion" class="form-control" />
+                            <span asp-validation-for="Direccion" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Celular" class="control-label"></label>
+                            <input type="number" asp-for="Celular" class="form-control" />
+                            <span asp-validation-for="Celular" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label asp-for="Genero" class="control-label"></label>
+                        <div class="form-group">
+                            @*<input asp-for="Genero" class="form-control" />*@
+                            Masculino @Html.RadioButtonFor(model => model.Genero, "M")
+                            Femenino @Html.RadioButtonFor(model => model.Genero, "F")
+                            <span asp-validation-for="Genero" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Deporte" class="control-label"></label> @*<input asp-for="Deporte" class="form-control" />*@
+                            <select class="custom-select" asp-for="Deporte" required>
+                                <option disabled>Seleccione</option>
+                                <option value="FÚTBOL">Fútbol</option>
+                                <option value="BALONCESTO">Baloncesto</option>
+                                <option value="NATACIÓN">Natación</option>
+                                <option value="AJEDREZ">Ajedrez</option>
+                                <option value="VOLEIBOL">Voleibol</option>
+
+                            </select>
+                            <span asp-validation-for="Deporte" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Trabaja" class="control-label"></label> @*<input asp-for="Trabaja" class="form-control" />*@
+                            <select class="custom-select" asp-for="Trabaja" required>
+                                <option disabled>Seleccione</option>
+                                <option value="SI">Si</option>
+                                <option value="NO">No</option>
+                            </select>
+                            <span asp-validation-for="Trabaja" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Sueldo" class="control-label"></label>
+                            <input type="number" min="0" data-decimal="0" asp-for="Sueldo" class="form-control" />
+                            <span asp-validation-for="Sueldo" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label asp-for="Estado" class="control-label"></label> @*<input asp-for="Estado" class="form-control" />*@
+                            <select class="custom-select" asp-for="Estado" required>
+                                <option disabled>Seleccione</option>
+                                <option value="A">Activo</option>
+                                <option value="I">Ináctivo</option>
+                            </select>
+                            <span asp-validation-for="Estado" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="submit" value="Guardar" class="btn btn-primary btn-sm" />
+                            <a class="btn btn-danger btn-sm" asp-action="Index">Cancelar</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

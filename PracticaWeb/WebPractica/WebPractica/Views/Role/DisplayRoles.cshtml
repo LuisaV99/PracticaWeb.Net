@@ -1,0 +1,40 @@
+﻿@model List<Microsoft.AspNetCore.Identity.IdentityRole>
+    <div class="wrapper">
+        <div class="content-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="mx-auto">
+                        <div class="col-lg-12">
+                            <h1>Roles</h1>
+                            <hr />
+                            <a asp-action="Create" asp-controller="Role" class="btn btn-primary btn-sm">Nuevo</a>
+                            <br /> <br />
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Nombre
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Name)
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-danger btn-sm" asp-route-role="@item.Name" asp-action="RemoveRole" onclick="return confirm('¿Está seguro de eliminar este Rol?')">Eliminar</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
